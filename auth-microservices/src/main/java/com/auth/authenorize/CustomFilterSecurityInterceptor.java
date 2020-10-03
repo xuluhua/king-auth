@@ -87,8 +87,7 @@ public class CustomFilterSecurityInterceptor extends CustomSecurityInterceptor i
 
 	@Override
 	public Class<?> getSecureObjectClass() {
-		// TODO Auto-generated method stub
-		return null;
+		return FilterInvocation.class;
 	}
 
 	@Override
