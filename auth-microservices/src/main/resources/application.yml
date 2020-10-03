@@ -1,0 +1,35 @@
+server:
+  port: 8088
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 512
+spring:
+  application:
+    name: auth
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+#    request:
+#      enabled: true
+#      mime-types: text/xml,application/xml,application/json # 配置压缩支持的MIME TYPE
+#      min-request-size: 2048  # 配置压缩数据大小的下限
+    response:
+      enabled: true
+    request:
+      enabled: true
+      mime-types:
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 512
+      
